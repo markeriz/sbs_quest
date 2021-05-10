@@ -16,6 +16,7 @@ class Subject extends Model
         'code'
     ];
 
+    // Studijų dalykas gali būti įvertintas vienų arba daugiau pažimių
     public function marks()
     {
         return $this->hasMany(Mark::class);

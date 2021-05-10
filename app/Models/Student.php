@@ -18,16 +18,19 @@ class Student extends Model
         'last_name'
     ];
 
+    // Studentas privalo būti priskirtas vienam universitetui.
     public function university()
     {
         return $this->belongsTo(University::class);
     }
 
+    // Studentas turi vieną arba daugiau studijų įvertinimų.
     public function marks()
     {
         return $this->hasMany(Mark::class)->orderBy('subject_id');
     }
 
+    // Studentas turi vieną arba daugiau studijų ir su jų vidurkiais
     public function subject_average()
     {
         return $this->marks()
@@ -35,6 +38,7 @@ class Student extends Model
                         ->groupBy('subject_id');
     }
 
+    // Atliekama lentelės viršūnės generacija React lentelei.
     public function tHeadListAverageOfSubject()
     {
         $list = [
@@ -49,6 +53,7 @@ class Student extends Model
         return $list;
     }
 
+    // Gauti pilną studento vardą ir pavardę.
     public function getFullNameAttribute()
     {
         return $this->first_name . ' ' . $this->last_name;

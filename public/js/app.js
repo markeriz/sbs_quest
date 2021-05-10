@@ -2023,12 +2023,14 @@ var StudentAverageOfSubject = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      // prieš atvaizduojant lentele tikrinama ar yra kraunami duomenis
       if (this.state.isLoading) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
           className: "StudentAverageOfSubject",
           children: "Loading..."
         });
-      }
+      } // Gražinama lentelė jai suteikiant 'columns' duomenis ir 'data' duomenis
+
 
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Table__WEBPACK_IMPORTED_MODULE_4__.Table, {
         columns: this.state.header,
@@ -2038,7 +2040,8 @@ var StudentAverageOfSubject = /*#__PURE__*/function (_Component) {
   }]);
 
   return StudentAverageOfSubject;
-}(react__WEBPACK_IMPORTED_MODULE_2__.Component);
+}(react__WEBPACK_IMPORTED_MODULE_2__.Component); // Jeigu randamas elementas pagal ID atvaizduojamas komponentas StudentAverageOfSubject
+
 
 
 

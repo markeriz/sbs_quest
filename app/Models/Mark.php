@@ -17,11 +17,13 @@ class Mark extends Model
         'subject_id'
     ];
 
+    // Įvertinimas privalo turėti vieną studentą
     public function student()
     {
         return $this->belongsTo(Student::class);
     }
 
+    // Įvertinimas privalo turėti vieną studijų dalyką
     public function subject()
     {
         return $this->belongsTo(Subject::class);

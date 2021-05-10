@@ -13,6 +13,7 @@ class University extends Model
 
     protected $fillable = ['name'];
 
+    // Universitetas turi vieną arba daugiau studentų
     public function students()
     {
         return $this->hasMany(Student::class);

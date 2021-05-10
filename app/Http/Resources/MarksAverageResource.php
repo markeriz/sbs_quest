@@ -14,6 +14,7 @@ class MarksAverageResource extends JsonResource
      */
     public function toArray($request)
     {
+        // Gražinamas masyvas su studijų dalyko pavadinimu ir jo vidurkio reikšme
         return [
             $this->subject->code => $this->average,
         ];

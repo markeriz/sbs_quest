@@ -18,6 +18,7 @@ class StudentCollection extends ResourceCollection
         $head = new Student();
         $thead = $head->tHeadListAverageOfSubject();
 
+        // Gražinamas masyvas, kuriame yra lentelės duomenys ir lentelės turinio duomenys
         return [
             'thead' => $thead,
             'tbody' => $this->collection

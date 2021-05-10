@@ -14,6 +14,7 @@ export default class StudentAverageOfSubject extends Component {
     }
 
     async componentDidMount() {
+        // Kreipimasis i backend su post užklausa, gavus duomenis jie užkraunami į state masyva.
         await axios.post('http://localhost:8000/api/get_marks_avarages')
                     .then(response => {
                         const tbody = response.data.data.tbody;
@@ -27,13 +28,18 @@ export default class StudentAverageOfSubject extends Component {
     }
 
     render() {
+
+        // prieš atvaizduojant lentele tikrinama ar yra kraunami duomenis
         if (this.state.isLoading) {
             return <div className="StudentAverageOfSubject">Loading...</div>;
         }
 
+        // Gražinama lentelė jai suteikiant 'columns' duomenis ir 'data' duomenis
         return <Table columns={this.state.header} data={this.state.marks} />
     };
 }
+
+// Jeigu randamas elementas pagal ID atvaizduojamas komponentas StudentAverageOfSubject
 
 if (document.getElementById('student-average-of-subject')) {
     ReactDOM.render(<StudentAverageOfSubject />, document.getElementById('student-average-of-subject'));

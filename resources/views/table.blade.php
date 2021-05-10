@@ -9,7 +9,10 @@
     <link rel="stylesheet" href="{{ ('css/app.css') }}">
 </head>
 <body>
+
+    {{-- Vieta kurioje atvaizduojama lentele --}}
     <div id="student-average-of-subject"></div>
+
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
