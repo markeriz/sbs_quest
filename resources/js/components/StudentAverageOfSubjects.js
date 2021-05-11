@@ -14,8 +14,10 @@ export default class StudentAverageOfSubject extends Component {
     }
 
     async componentDidMount() {
+        // Paimamas adresas
+        const origin = window.location.origin
         // Kreipimasis i backend su post užklausa, gavus duomenis jie užkraunami į state masyva.
-        await axios.post('http://localhost:8000/api/get_marks_avarages')
+        await axios.post(origin + '/api/get_marks_avarages')
                     .then(response => {
                         const tbody = response.data.data.tbody;
                         const thead = response.data.data.thead;

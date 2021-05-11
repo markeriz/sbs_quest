@@ -1990,12 +1990,16 @@ var StudentAverageOfSubject = /*#__PURE__*/function (_Component) {
       var _componentDidMount = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
         var _this2 = this;
 
+        var origin;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
-                return axios__WEBPACK_IMPORTED_MODULE_1___default().post('http://localhost:8000/api/get_marks_avarages').then(function (response) {
+                // Paimamas adresas
+                origin = window.location.origin; // Kreipimasis i backend su post užklausa, gavus duomenis jie užkraunami į state masyva.
+
+                _context.next = 3;
+                return axios__WEBPACK_IMPORTED_MODULE_1___default().post(origin + '/api/get_marks_avarages').then(function (response) {
                   var tbody = response.data.data.tbody;
                   var thead = response.data.data.thead;
 
@@ -2006,7 +2010,7 @@ var StudentAverageOfSubject = /*#__PURE__*/function (_Component) {
                   });
                 });
 
-              case 2:
+              case 3:
               case "end":
                 return _context.stop();
             }
